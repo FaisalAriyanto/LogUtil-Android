@@ -1,9 +1,10 @@
 package pkp.map.logutilexample
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
+import kotlinx.android.synthetic.main.activity_main.*
+import pkp.map.errorutil.LogError
 import pkp.map.logutil.LogDebug
-import pkp.map.logutil.LogDebug3
 
 class MainActivity : AppCompatActivity() {
 
@@ -12,5 +13,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         LogDebug().d("huhuhu")
+
+        navigateBtn.setOnClickListener {
+            LogError.navigate(this)
+        }
     }
 }
